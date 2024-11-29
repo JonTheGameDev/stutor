@@ -163,7 +163,7 @@ public class C_Student_Reg extends JFrame {
 	                			if(pass) {
 	    		                	stmt.executeUpdate("insert into students values('"+name+"','"+dob+"','"+gender+"',"+Long.parseLong(contact)+",'"+fname+"','"+mname+"','"+rno+"',"+Integer.parseInt(adno)+",'"+course+"','"+Degree+"','"+year+"',"+Float.parseFloat(Cgpa)+","+staffid+")");
 	    		                	stmt.executeUpdate("insert into user_lgn values('"+name+"','"+adno+"','student')");
-	    		                	stmt.executeUpdate("insert into attendance values('"+adno+"','"+fill(31)+"','"+fill(29)+"','"+fill(31)+"','"+fill(30)+"')");
+	    		                	stmt.executeUpdate("insert into attendance values('"+adno+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"','"+fill()+"')");
 	    		                	JOptionPane.showMessageDialog(null, "Data as been registered successfully!");
 	    		                	C_Admin ob= new C_Admin();
 	    		                    ob.setVisible(true);
@@ -192,13 +192,10 @@ public class C_Student_Reg extends JFrame {
     public static void main(String[] args) {
         JFrame f = new C_Student_Reg();
     }
-    static String fill(int n) {
+    static String fill() {
     	StringBuilder s=new StringBuilder();
-    	for(int i=0;i<n;i++) {
-    		s.append("N/A");
-    		if(i!=n-1)
-    			s.append("-");
-    	}
+    	for(int i=0;i<31;i++) 
+    		s.append("N/A-");
     	return s.toString();
     }
 }

@@ -26,7 +26,7 @@ public class View_Attend {
             	if(rs.getInt(1)==id)
             		st=new StringTokenizer(rs.getString(month+2),"-");
             }
-			String []months={"January","February","March","April"};
+			String []months={"January","February","March","April","May","June","July","August","September","October","November","December"};
 			JFrame jf = new JFrame();
 			ResultSet rs1=stmt.executeQuery("select name from students where admission_no="+id);
 			rs1.next();
@@ -107,7 +107,7 @@ public class View_Attend {
 			});
 		    nextbtn.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					if(month!=3) {		
+					if(month!=11) {		
 						ob2.build();
 						jf.dispose();
 					}

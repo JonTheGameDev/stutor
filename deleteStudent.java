@@ -53,8 +53,6 @@ public class deleteStudent extends JFrame implements ActionListener{
             		stmt.executeUpdate("delete from user_lgn where passwd='"+adno+"'");
             		stmt.executeUpdate("delete from attendance where admno="+adno);
             		JOptionPane.showMessageDialog(null, "Data has been deleted successfully");
-            		C_Admin ob= new C_Admin();
-                    ob.setVisible(true);
                     dispose();
             	}
             	else

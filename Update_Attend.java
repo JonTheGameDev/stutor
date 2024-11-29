@@ -22,23 +22,18 @@ public class Update_Attend {
 			Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniproject","root","MinePixel25");
             Statement stmt=con.createStatement();
-            System.out.println("Pass Point 1");
             ResultSet rs=stmt.executeQuery("select * from attendance");
-            System.out.println("Pass Point 2");
             StringTokenizer st=null;
             while(rs.next()) {
             	if(rs.getInt(1)==id)
             		st=new StringTokenizer(rs.getString(month+2),"-");
             }
-            System.out.println("Pass Point 3");
             JFrame jf = new JFrame();
             ResultSet rs1=stmt.executeQuery("select name from students where admission_no="+id);
             System.out.println(id);
-            System.out.println("Pass Point 4");
 			rs1.next();
 			jf.setTitle("Attendance of student: "+rs1.getString(1)+"("+id+")");
-			System.out.println("Pass Point 5");
-			String []months={"January","February","March","April"};
+			String []months={"January","February","March","April","May","June","July","August","September","October","November","December"};
 		    jf.setSize(800,600);
 		    JPanel p = new JPanel(new GridLayout(6, 7));
 		    JPanel p1 = new JPanel(new GridLayout(1, 7));

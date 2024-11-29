@@ -21,29 +21,24 @@ public class Teacher_Page {
 			JPanel p=new JPanel();
 			p.setLayout(null);
 			ResultSet rs1=stmt.executeQuery("select name from teachers where id="+id);
-			System.out.println(id);
 			rs1.next();
-			System.out.println("Pass Point 1");
 			f.setTitle("Staff "+rs1.getString(1)+"'s Attendance Register");
-			System.out.println("Pass Point 2");
 			f.setSize(500,300);
 			f.setResizable(false);
 			p.setBackground(new Color(116,198,157));
 			ArrayList<String> names=new ArrayList<>();
 			ResultSet rs=stmt.executeQuery("select * from students");
-			System.out.println("Pass Point 3");
 			while(rs.next()) {
 				if(rs.getInt(13)==id)
 					names.add(rs.getString(1)+"("+rs.getInt(8)+")");
 			}
-			System.out.println("Pass Point 4");
 			JButton backbtn=new JButton("<-Back");
 			backbtn.setBounds(5,5,80,30);
 	        p.add(backbtn);
 			JComboBox<String> students = new JComboBox<>(names.toArray(new String[0]));
 			students.setBounds(70,70,150,30);
 	        p.add(students);
-	        String[] Months = {"January","February","March","April"};
+	        String[] Months = {"January","February","March","April","May","June","July","August","September","October","November","December"};
 	        JComboBox<String> months = new JComboBox<>(Months);
 	        months.setBounds(250,70,150,30);
 	        p.add(months);
